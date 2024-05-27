@@ -1,12 +1,14 @@
 package edu.pxu.lthdt.bai03;
 
+import java.time.LocalDate;
+
 public class XeOto {
 	private String hangXe;
 	private int namSX;
 	private float dongCo;
 
 	public XeOto(String hangXe, int namSX, float dongCo) {
-
+		super();
 		this.hangXe = hangXe;
 		this.namSX = namSX;
 		this.dongCo = dongCo;
@@ -25,14 +27,16 @@ public class XeOto {
 	}
 
 	public void setNamSX(int namSX) {
-		if (namSX <= 1885 || namSX >= 2025) {
-			System.out.println("Nhập sai dữ liệu");
+		LocalDate ngayHT = LocalDate.now();
+		int namHt = ngayHT.getYear();
+		if ((namSX < 1885) || (namSX > namHt)) {
+			System.out.println("Nam san xuat khong phu hop");
 		} else {
+
 			this.namSX = namSX;
 		}
 
 	}
-
 	public float getDongCo() {
 		return dongCo;
 	}

@@ -1,5 +1,7 @@
 package edu.pxu.lthdt.bai03;
 
+import java.time.LocalDate;
+
 public class XeBus {
 	private String hangXe;
 	private int namSX;
@@ -7,11 +9,11 @@ public class XeBus {
 	private int soGhe;
 
 	public XeBus(String hangXe, int namSX, float dongCo, int soGhe) {
-
-		this.hangXe = hangXe;
-		this.namSX = namSX;
-		this.dongCo = dongCo;
-		this.soGhe = soGhe;
+		super();
+		this.setHangXe(hangXe);
+		this.setNamSX(namSX);
+		this.setDongCo(dongCo);
+		this.setSoGhe(soGhe);
 	}
 
 	public String getHangXe() {
@@ -27,9 +29,12 @@ public class XeBus {
 	}
 
 	public void setNamSX(int namSX) {
-		if (namSX <= 1885 || namSX >= 2025) {
-			System.out.println("Nhập sai dữ liệu");
+		LocalDate ngayHT = LocalDate.now();
+		int namHt = ngayHT.getYear();
+		if ((namSX < 1885) || (namSX > namHt)) {
+			System.out.println("Nam san xuat khong phu hop");
 		} else {
+
 			this.namSX = namSX;
 		}
 
