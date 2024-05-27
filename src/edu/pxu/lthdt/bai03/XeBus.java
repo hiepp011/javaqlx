@@ -62,8 +62,17 @@ public class XeBus {
 	}
 
 	@Override
-	public String toString() {
-		return "XeBus [hangXe=" + hangXe + ", namSX=" + namSX + ", dongCo=" + dongCo + ", soGhe=" + soGhe + "]";
-	}
-
+	 public String toString() {
+        if (namSX == 0 || dongCo == 0 || soGhe == 0){
+            return "XeBus{" + "hang xe=" + hangXe + '}';
+        } else if (namSX == 0) {
+            return "XeBus{" + "hang xe = " + hangXe + ", dongco = " + dongCo + ", so ghe =" + soGhe + '}';
+        } else if (dongCo == 0) {
+            return "XeBus{" + "hang xe = " + hangXe + ", nam san xuat = " + namSX + ", so ghe = " + soGhe + '}';
+        } else if (soGhe == 0) {
+            return "XeBus{" + "hang xe = " + hangXe + ", nam san xuat = " + namSX + ", dong co = " + dongCo + '}';
+        } else {
+            return "XeBus{" + "hang xe = " + hangXe + ", nam san xuat = " + namSX + ", dong co = " + dongCo + ", so ghe = " + soGhe + '}';
+        }
+    }
 }

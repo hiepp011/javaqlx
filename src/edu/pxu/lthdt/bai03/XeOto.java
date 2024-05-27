@@ -9,9 +9,9 @@ public class XeOto {
 
 	public XeOto(String hangXe, int namSX, float dongCo) {
 		super();
-		this.hangXe = hangXe;
-		this.namSX = namSX;
-		this.dongCo = dongCo;
+		this.setHangXe(hangXe);
+		this.setNamSX(namSX);
+		this.setDongCo(dongCo);
 	}
 
 	public String getHangXe() {
